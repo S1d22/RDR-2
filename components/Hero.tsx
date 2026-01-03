@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax-like overlay */}
+      {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed transition-transform duration-1000"
         style={{ 
@@ -15,11 +14,20 @@ const Hero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl px-4">
-          <h1 className="text-6xl md:text-8xl font-display font-black text-white mb-6 tracking-tighter text-shadow-red animate-in fade-in slide-in-from-bottom-8 duration-700">
+
+        {/* LOGO */}
+        <img
+          src="https://media.discordapp.net/attachments/1345532575095197776/1457072099200864256/dpp.png?ex=695aaba3&is=69595a23&hm=a86fa55fef89580f7efb0daf3ea23d8526526d487a7ab923d6d57d8b335c2d76&=&format=webp&quality=lossless"
+          alt="Dust Peek Logo"
+          className="mx-auto mb-6 w-28 md:w-36 lg:w-72 drop-shadow-xl animate-in fade-in slide-in-from-bottom-6 duration-700"
+        />
+
+        <h1 className="text-6xl md:text-8xl font-display font-black text-white mb-6 tracking-tighter text-shadow-red animate-in fade-in slide-in-from-bottom-8 duration-700">
           <span className="block">Welcome To</span>
           <span className="block text-rdr-red">Dust Peek</span>
-          </h1>
+        </h1>
 
+        {/* Spacer */}
         <div className="h-12 md:h-20"></div>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -32,12 +40,14 @@ const Hero: React.FC = () => {
             Join Our Discord
             <div className="absolute -inset-0.5 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
           </a>
+
           <Link 
             to="/whitelist"
             className="px-8 py-4 bg-transparent border-2 border-white text-white font-display font-bold text-lg uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto rounded-full"
           >
             Apply for Whitelist
           </Link>
+
           <Link 
             to="/rules"
             className="px-8 py-4 bg-transparent border-2 border-rdr-gold text-rdr-gold font-display font-bold text-lg uppercase tracking-widest hover:bg-rdr-gold hover:text-black transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto rounded-full"
@@ -47,7 +57,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Silhouette elements */}
+      {/* Bottom Fade */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
     </section>
   );
