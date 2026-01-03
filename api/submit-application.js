@@ -6,51 +6,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { discordUsername, age, country, experience, motivation } = req.body;
-
-    // Basic validation
-    if (!discordUsername) {
-      return res.status(400).json({ error: 'discordUsername is required' });
-    }
+    const {
+      gamertag,
+      discordId,
+      age,
+      experience,
+      backstory,
+      score,
+      language
+    } = req.body;
 
     const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+
     if (!webhookUrl) {
-      return res.status(500).json({ error: 'Webhook not configured' });
+      throw new Error('Discord webhook URL not set');
     }
 
     const payload = {
-      username: 'Frontier Redemption',
       embeds: [
         {
-          title: '📜 New Whitelist Application',
+          title: '📝 New Whitelist Application',
           color: 15158332,
           fields: [
-            { name: 'Discord Username', value: String(discordUsername || 'N/A'), inline: true },
-            { name: 'Age', value: String(age || 'N/A'), inline: true },
-            { name: 'Country', value: String(country || 'N/A'), inline: true },
-            { name: 'Experience', value: String(experience || 'N/A'), inline: false },
-            { name: 'Motivation', value: String(motivation || 'N/A'), inline: false },
+            { name: '🎮 Gamertag', value: gamertag, inline: true },
+            { name: '💬 Discord', value: discordId, inline: true },
+            { name: '🎂 Age', value: age, inline: true },
+            { name: '📚 RP Experience', value: experience, inline: true },
+            { name: '🧠 Quiz Score', value: `${score}/10`, inline: true },
+            { name: '🌍 Language', value: language.toUpperCase(), inline: true },
+            { name: '📖 Backstory', value: backstory }
           ],
-          timestamp: new Date().toISOString(),
-        },
-      ],
-    };
-
-    const r = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
-    if (!r.ok) {
-      const text = await r.text();
-      console.error('Discord webhook error', r.status, text);
-      return res.status(502).json({ error: 'Failed to send to Discord' });
-    }
-
-    return res.status(200).json({ success: true });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: 'Internal server error' });
-  }
-}
+          footer: {
+            text: 'Dust Pe
