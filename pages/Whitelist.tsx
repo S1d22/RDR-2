@@ -166,10 +166,29 @@ const Whitelist: React.FC = () => {
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleFormSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch('/api/submit-application', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...formData,
+        score,
+        language: lang
+      })
+    });
+
+    if (!res.ok) {
+      throw new Error('Submission failed');
+    }
+
     setStage('submitted');
-  };
+  } catch (error) {
+    alert('Failed to submit application. Please try again later.');
+  }
+};
 
   const selectLanguage = (selectedLang: 'en' | 'ar') => {
     setLang(selectedLang);
