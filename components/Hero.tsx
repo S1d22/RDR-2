@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
 
         {/* LOGO */}
         <img
-          src="https://media.discordapp.net/attachments/1345532575095197776/1457072099200864256/dpp.png?ex=695aaba3&is=69595a23&hm=a86fa55fef89580f7efb0daf3ea23d8526526d487a7ab923d6d57d8b335c2d76&=&format=webp&quality=lossless"
+          src="https://drive.google.com/file/d/1k8gVI3TxMaRaASCI9A6WdokFsyWu4--s/view?usp=sharing"
           alt="Dust Peek Logo"
           className="mx-auto mb-6 w-28 md:w-36 lg:w-72 drop-shadow-xl animate-in fade-in slide-in-from-bottom-6 duration-700"
         />
