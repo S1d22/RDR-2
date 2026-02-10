@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     { name: 'Home', path: '/' },
     { name: 'Whitelist', path: '/whitelist' },
     { name: 'Rules', path: '/rules' },
-    { name: 'FAQs', path: '/faqs' },
+    
   ];
 
   const handleDonateClick = (e: React.MouseEvent) => {
