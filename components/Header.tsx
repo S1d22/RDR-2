@@ -141,10 +141,10 @@ const Header: React.FC = () => {
                         <div className="text-6xl font-display font-black text-[#3d2b1f] mb-2">$2.99</div>
                         <div className="w-full h-[1px] bg-[#3d2b1f]/20 my-6"></div>
                         <button 
-                          onClick={handlePurchaseClick}
+                          onClick={handleClick}
                           className="w-full py-5 bg-[#3d2b1f] text-[#f4e4bc] font-display text-2xl uppercase tracking-[0.2em] hover:bg-rdr-red hover:text-white transition-all shadow-xl rounded-xl"
                         >
-                          PURCHASE PERMIT
+                          Subscribe
                         </button>
                       </div>
                       <div className="absolute bottom-4 right-4 w-16 h-16 bg-rdr-red/90 rounded-full flex items-center justify-center border-4 border-rdr-red/50 shadow-md transform -rotate-12 pointer-events-none">
