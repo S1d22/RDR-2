@@ -53,10 +53,13 @@ const Payments: React.FC = () => {
             <div className="grid gap-6">
               <BankLedger 
                 bankName="ALG POST BARIDI MOB"
-                owner="ᴰᵖ TiiGeR"
-                account="00799999004033976260"
                 owner="Johnny Heck"
                 account="00799999002564843069"
+              />
+              <BankLedger 
+                bankName="ALG POST BARIDI MOB"
+                owner="ᴰᵖ TiiGeR"
+                account="00799999004033976260"
               />
               <BankLedger 
                 bankName="REDOTPAY UID"
