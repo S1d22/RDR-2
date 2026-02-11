@@ -163,7 +163,7 @@ const Header: React.FC = () => {
                           }}
                           className="w-full py-5 bg-[#3d2b1f] text-[#f4e4bc] font-display text-2xl uppercase tracking-[0.2em] hover:bg-rdr-red hover:text-white transition-all shadow-xl rounded-xl"
                         >
-                          PURCHASE PERMIT
+                          SUBSCRIBE
                         </button>
                       </div>
 
