@@ -141,7 +141,7 @@ const Header: React.FC = () => {
                         <div className="text-6xl font-display font-black text-[#3d2b1f] mb-2">$2.99</div>
                         <div className="w-full h-[1px] bg-[#3d2b1f]/20 my-6"></div>
                         <button 
-                          onClick={handleClick}
+                          onClick={handlePurchaseClick}
                           className="w-full py-5 bg-[#3d2b1f] text-[#f4e4bc] font-display text-2xl uppercase tracking-[0.2em] hover:bg-rdr-red hover:text-white transition-all shadow-xl rounded-xl"
                         >
                           Subscribe
