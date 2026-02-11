@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Whitelist from './pages/Whitelist';
 import Rules from './pages/Rules';
 import FAQs from './pages/FAQs';
+import Payments from './pages/Payments';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
             <Route path="/whitelist" element={<Whitelist />} />
             <Route path="/rules" element={<Rules />} />
             <Route path="/faqs" element={<FAQs />} />
+            <Route path="/payments" element={<Payments />} />
           </Routes>
         </main>
         <Footer />
