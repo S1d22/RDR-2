@@ -1,24 +1,30 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ASSETS } from '../constants';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showDonationModal, setShowDonationModal] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Whitelist', path: '/whitelist' },
     { name: 'Rules', path: '/rules' },
-    
+    { name: 'FAQs', path: '/faqs' },
   ];
 
   const handleDonateClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setShowDonationModal(true);
     setIsOpen(false);
+  };
+
+  const handlePurchaseClick = () => {
+    setShowDonationModal(false);
+    navigate('/payments');
   };
 
   return (
@@ -106,13 +112,8 @@ const Header: React.FC = () => {
       {showDonationModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-300">
           <div className="max-w-xl w-full relative">
-            {/* Perfectly Rectangular Old Paper Document */}
             <div className="bg-[#f4e4bc] p-10 text-[#2c1a12] border-[14px] border-double border-[#3d2b1f] shadow-[15px_15px_0px_rgba(0,0,0,0.6)] relative overflow-hidden rounded-xl">
-              
-              {/* Paper Texture Overlay */}
               <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cardboard-flat.png')] mix-blend-multiply"></div>
-              
-              {/* Close Button */}
               <button 
                 onClick={() => setShowDonationModal(false)}
                 className="absolute top-4 right-6 text-3xl font-display text-[#3d2b1f] hover:text-rdr-red transition-colors z-20"
@@ -121,74 +122,39 @@ const Header: React.FC = () => {
               </button>
               
               <div className="relative z-10">
-                {/* Document Header */}
                 <div className="text-center mb-10">
                   <p className="text-[11px] font-display uppercase tracking-[0.5em] mb-2 opacity-70">Saint Denis Registry • 1899</p>
                   <h2 className="text-5xl font-display font-black tracking-tighter uppercase leading-none border-b-2 border-[#3d2b1f]/30 pb-6 inline-block w-full">
                     PROSPECTING PERMIT
                   </h2>
-                  <div className="flex items-center justify-center space-x-6 mt-6">
-                    <div className="h-[1px] w-24 bg-[#3d2b1f]/40"></div>
-                    <span className="text-lg">⚔</span>
-                    <div className="h-[1px] w-24 bg-[#3d2b1f]/40"></div>
-                  </div>
                 </div>
 
                 <div className="grid md:grid-cols-1 gap-8 px-2">
                   <div className="text-center">
                     <p className="font-typewriter text-base leading-relaxed italic mb-10 max-w-lg mx-auto">
-                      "By order of the Frontier Council, this certificate grants the holder full access to community privileges and priority trails."
+                      "This certificate grants the holder priority trails and official supporter distinction."
                     </p>
 
                     <div className="relative p-8 bg-black/5 border-2 border-[#3d2b1f] mb-8 rounded-lg">
                       <div className="flex flex-col items-center">
                         <span className="font-display text-sm uppercase tracking-widest opacity-60 mb-2">Permit Value</span>
-                        <div className="text-6xl font-display font-black text-[#3d2b1f] mb-2">
-                          $2.99
-                        </div>
-                        <span className="font-typewriter text-xs uppercase opacity-80">Per Calendar Month</span>
-                        
+                        <div className="text-6xl font-display font-black text-[#3d2b1f] mb-2">$2.99</div>
                         <div className="w-full h-[1px] bg-[#3d2b1f]/20 my-6"></div>
-                        
-                        <div className="space-y-3 text-left w-full max-w-sm mx-auto font-body text-sm mb-8">
-                          <p className="flex items-center"><span className="text-rdr-red mr-3">✔</span> Expedited Whitelist Telegrams</p>
-                          <p className="flex items-center"><span className="text-rdr-red mr-3">✔</span> Discord Supporter Distinction</p>
-                          <p className="flex items-center"><span className="text-rdr-red mr-3">✔</span> Private Development Blueprints</p>
-                        </div>
-
                         <button 
-                          onClick={() => {
-                            alert(`Permit issued! Thank you for your $2.99 contribution, partner.`);
-                            setShowDonationModal(false);
-                          }}
+                          onClick={handlePurchaseClick}
                           className="w-full py-5 bg-[#3d2b1f] text-[#f4e4bc] font-display text-2xl uppercase tracking-[0.2em] hover:bg-rdr-red hover:text-white transition-all shadow-xl rounded-xl"
                         >
-                          SUBSCRIBE
+                          PURCHASE PERMIT
                         </button>
                       </div>
-
-                      {/* Wax Seal - Moved INSIDE for clean rectangular shape */}
-                      <div className="absolute bottom-4 right-4 w-16 h-16 bg-rdr-red/90 rounded-full flex items-center justify-center border-4 border-rdr-red/50 shadow-md transform -rotate-12 pointer-events-none flex-shrink-0">
+                      <div className="absolute bottom-4 right-4 w-16 h-16 bg-rdr-red/90 rounded-full flex items-center justify-center border-4 border-rdr-red/50 shadow-md transform -rotate-12 pointer-events-none">
                          <span className="text-white font-display text-xl font-bold opacity-80">FR</span>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div className="mt-8 pt-6 border-t border-[#3d2b1f]/20 flex justify-between items-center opacity-60">
-                  <div className="text-left">
-                    <p className="text-[10px] font-display uppercase tracking-widest">Serial Code</p>
-                    <p className="font-typewriter text-[10px]">#00299-RDR-COMM</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-[10px] font-display uppercase tracking-widest">Authorized By</p>
-                    <p className="font-typewriter text-[10px]">The Old Trail Guide</p>
-                  </div>
-                </div>
               </div>
             </div>
-            
-            {/* Background "Stack" Effect */}
             <div className="absolute -inset-2 bg-black/10 border border-[#3d2b1f]/10 -z-20 transform translate-x-2 translate-y-2 rounded-xl"></div>
           </div>
         </div>
