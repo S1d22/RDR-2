@@ -80,7 +80,7 @@ const Payments: React.FC = () => {
               <ul className="space-y-6 font-body text-lg">
                 <li className="flex items-start">
                   <span className="bg-[#3d2b1f] text-[#f4e4bc] w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">1</span>
-                  <p>Send your contribution ($2.99) via any of the listed bank ledgers or via <span className="font-bold underline">STC Pay (05XXXXXXX)</span>.</p>
+                  <p>Send your contribution ($2.99) via any of the listed bank ledgers or via <span className="font-bold underline">BaridiMob or Redotpay</span>.</p>
                 </li>
                 <li className="flex items-start">
                   <span className="bg-[#3d2b1f] text-[#f4e4bc] w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">2</span>
