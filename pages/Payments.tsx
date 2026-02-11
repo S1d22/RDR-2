@@ -52,16 +52,16 @@ const Payments: React.FC = () => {
             </h2>
             <div className="grid gap-6">
               <BankLedger 
-                bankName="Al Rajhi Bank"
-                owner="Dust Peek Community Hub"
-                account="1234 5678 9012 3456"
-                iban="SA 82 8000 0000 1234 5678 9012"
+                bankName="ALG POST BARIDI MOB"
+                owner="ᴰᵖ TiiGeR"
+                account="00799999004033976260"
+                owner="Johnny Heck"
+                account="00799999002564843069"
               />
               <BankLedger 
-                bankName="SNB (National Bank)"
-                owner="Frontier Treasury Dept"
-                account="9876 5432 1098 7654"
-                iban="SA 55 1000 0000 9876 5432 1098"
+                bankName="REDOTPAY UID"
+                owner="ᴰᵖ TiiGeR"
+                account="1490512059"
               />
             </div>
           </div>
