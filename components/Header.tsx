@@ -123,7 +123,7 @@ const Header: React.FC = () => {
                 <div className="text-center mb-10">
                   <p className="text-[11px] font-display uppercase tracking-[0.5em] mb-2 opacity-70">Saint Denis Registry • 1899</p>
                   <h2 className="text-5xl font-display font-black tracking-tighter uppercase leading-none border-b-2 border-[#3d2b1f]/30 pb-6 inline-block w-full">
-                    PROSPECTING PERMIT
+                    VIP Subscription
                   </h2>
                 </div>
 
