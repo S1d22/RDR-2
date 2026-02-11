@@ -62,7 +62,7 @@ const Header: React.FC = () => {
                 onClick={handleDonateClick}
                 className="px-6 py-2 border border-rdr-gold text-rdr-gold font-display text-sm tracking-[0.2em] uppercase hover:bg-rdr-gold hover:text-black transition-all duration-300 rounded-full"
               >
-                Donate
+                Get VIP
               </button>
             </div>
 
@@ -100,7 +100,7 @@ const Header: React.FC = () => {
             <button 
               onClick={handleDonateClick}
               className="w-full text-center py-3 border-2 border-rdr-gold text-rdr-gold font-display text-lg tracking-[0.2em] uppercase hover:bg-rdr-gold hover:text-black transition-all rounded-full">
-              SUBSCRIBE
+              Get VIP
             </button>
           </div>
         )}
